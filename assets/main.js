@@ -1,10 +1,4 @@
-// ============================================================================
-// UTILITY FUNCTIONS
-// ============================================================================
 
-/**
- * Toggle dropdown enabled/disabled state with styling
- */
 function toggleDropdown(select, enable) {
   if (!select) return;
   
@@ -103,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initFormHandlers();
   initFAQAccordion();
   initContactForm();
+  initNewsletterForm();
   initModalHandlers();
 });
 
@@ -213,8 +208,26 @@ function initLocationSelector() {
 
       centers.forEach(function (center) {
         var centerDiv = document.createElement('div');
-        centerDiv.className = 'bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl flex items-start gap-3 hover:bg-white/20 transition-all';
-        centerDiv.innerHTML = '<i data-lucide="map-pin" class="w-5 h-5 text-brand-yellow shrink-0 mt-0.5"></i><span class="font-medium">' + center + '</span>';
+        centerDiv.className = 'bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl hover:bg-white/20 transition-all';
+        
+        // Location info section
+        var locationInfo = document.createElement('div');
+        locationInfo.className = 'flex items-start gap-3 mb-3';
+        locationInfo.innerHTML = '<i data-lucide="map-pin" class="w-5 h-5 text-brand-yellow shrink-0 mt-0.5"></i><span class="font-medium">' + center + '</span>';
+        
+        // Contact Us button
+        var contactBtn = document.createElement('button');
+        contactBtn.className = 'w-full mt-3 bg-brand-yellow hover:bg-brand-yellowHover text-slate-900 font-semibold py-2 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-sm';
+        contactBtn.innerHTML = '<i data-lucide="phone" class="w-4 h-4"></i><span>Contact Us</span>';
+        contactBtn.setAttribute('data-location', center);
+        
+        // Add click handler
+        contactBtn.addEventListener('click', function() {
+          openContactModal(center);
+        });
+        
+        centerDiv.appendChild(locationInfo);
+        centerDiv.appendChild(contactBtn);
         centersContainer.appendChild(centerDiv);
       });
 
@@ -263,9 +276,8 @@ function initFormHandlers() {
     var resetHeroDropdowns = initCascadingDropdowns('');
     heroForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      alert('Thank you! We will contact you soon.');
-      heroForm.reset();
-      resetHeroDropdowns();
+
+      window.location.href = 'thank-you.html';
     });
   }
 
@@ -273,16 +285,16 @@ function initFormHandlers() {
     var resetModalDropdowns = initCascadingDropdowns('modal-');
     demoForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      alert('Thank you! Your demo class request has been submitted.');
-      demoForm.reset();
-      resetModalDropdowns();
-
-      // Close modal
+      // Close modal first
       var modal = document.getElementById('demo-modal');
       if (modal) {
         modal.classList.add('hidden');
         modal.setAttribute('aria-hidden', 'true');
       }
+
+      setTimeout(function() {
+        window.location.href = 'thank-you.html';
+      }, 300);
     });
   }
 }
@@ -407,8 +419,67 @@ function initContactForm() {
 
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    alert('Thank you for your message! We will get back to you within 24 hours.');
-    contactForm.reset();
-    resetContactDropdowns();
+    window.location.href = 'thank-you.html';
   });
+}
+
+// ============================================================================
+// NEWSLETTER FORM
+// ============================================================================
+
+function initNewsletterForm() {
+  var newsletterForm = document.getElementById('newsletter-form');
+  if (!newsletterForm) return;
+
+  newsletterForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    window.location.href = 'thank-you.html';
+  });
+}
+
+// ============================================================================
+// CONTACT MODAL (Uses existing demo-modal)
+// ============================================================================
+
+function openContactModal(locationName) {
+  var modal = document.getElementById('demo-modal');
+  var modalDescription = modal ? modal.querySelector('p') : null;
+  
+  if (!modal) return;
+  
+  // Update modal description with location if provided
+  var originalText = 'Fill out the form below to book your free session.';
+  if (locationName && modalDescription) {
+    modalDescription.textContent = 'Location: ' + locationName + '. ' + originalText;
+  }
+  
+  // Open modal using Flowbite's method
+  // Find any existing button that opens this modal and trigger it, or open directly
+  var modalToggleBtn = document.querySelector('[data-modal-toggle="demo-modal"]');
+  if (modalToggleBtn) {
+    modalToggleBtn.click();
+  } else {
+    // Fallback: open modal manually
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  refreshIcons();
+  
+  // Restore original text when modal closes
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        if (modal.classList.contains('hidden') && locationName && modalDescription) {
+          modalDescription.textContent = originalText;
+          observer.disconnect();
+        }
+      }
+    });
+  });
+  
+  if (!modal.classList.contains('hidden')) {
+    observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+  }
 }
