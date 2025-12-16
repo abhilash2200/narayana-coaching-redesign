@@ -1,72 +1,77 @@
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Hide scrollbar for testimonials carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
 
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
   }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+  to {
+    transform: translateX(0);
   }
+}
 
-  /* Hide scrollbar for testimonials carousel */
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
 
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+.animate-scale-up {
+  animation: scale-up 0.3s ease-out;
+}
 
-  /* Animations */
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
 
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes scale-up {
-    from {
-      transform: scale(0.95);
-      opacity: 0;
-    }
-
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slide-in {
-    from {
-      transform: translateX(100%);
-    }
-
-    to {
-      transform: translateX(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.3s ease-out;
-  }
-
-  .animate-scale-up {
-    animation: scale-up 0.3s ease-out;
-  }
-
-  .animate-slide-in {
-    animation: slide-in 0.3s ease-out;
-  }
+/* FAQ Accordion Icon Rotation */
+[data-accordion-icon] {
+  transition: transform 0.3s ease-out;
+}
