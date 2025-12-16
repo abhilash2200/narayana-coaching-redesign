@@ -25,7 +25,7 @@
           colors: {
             brand: {
               blue: '#1f92da',
-              yellow: '#efb903',
+              yellow: '#ffc107',
               yellowHover: '#d9a700',
               dark: '#0f172a',
             }
@@ -47,7 +47,7 @@
     <!-- Navbar -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-4 lg:py-6">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center justify-center lg:justify-between gap-4">
           <!-- Logo -->
           <a href="#" class="flex-shrink-0 z-50 relative">
             <img src="assets/img/narayana-brand-logo.png" alt="Narayana Coaching"
@@ -72,52 +72,12 @@
               <span>Book Demo</span>
             </button>
           </div>
-          <button id="mobile-menu-toggle" class="lg:hidden p-2 text-slate-700 focus:outline-none z-50 relative"
-            aria-label="Toggle menu">
-            <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
-            <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
-          </button>
         </div>
       </div>
     </header>
 
-    <div id="mobile-menu" class="fixed inset-0 z-40 lg:hidden hidden">
-      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
-      <nav
-        class="absolute right-0 top-0 bottom-0 w-[80%] max-w-sm bg-white shadow-2xl p-6 flex flex-col animate-slide-in">
-        <div class="mt-16 flex flex-col gap-6">
-          <a href="#course"
-            class="text-lg font-medium text-slate-800 hover:text-brand-blue border-b border-slate-100 pb-2 mobile-menu-link">Courses</a>
-          <a href="#location"
-            class="text-lg font-medium text-slate-800 hover:text-brand-blue border-b border-slate-100 pb-2 mobile-menu-link">Find
-            Location</a>
-          <a href="#trust-section"
-            class="text-lg font-medium text-slate-800 hover:text-brand-blue border-b border-slate-100 pb-2 mobile-menu-link">Why
-            Trust Us</a>
-        </div>
 
-        <div class="mt-8 space-y-4">
-          <a href="mailto:info@narayanagroup.com" class="flex items-center gap-3 text-slate-600">
-            <i data-lucide="mail" class="w-5 h-5 text-brand-blue"></i>
-            info@narayanagroup.com
-          </a>
-          <a href="tel:1800-102-3344" class="flex items-center gap-3 text-slate-600">
-            <i data-lucide="phone" class="w-5 h-5 text-brand-blue"></i>
-            1800-102-3344
-          </a>
-        </div>
-
-        <div class="mt-auto">
-          <button data-modal-target="demo-modal" data-modal-toggle="demo-modal"
-            class="w-full flex justify-center items-center gap-2 bg-brand-yellow text-slate-900 px-6 py-4 rounded-xl font-bold shadow-lg mobile-menu-link">
-            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
-            Book Free Demo
-          </button>
-        </div>
-      </nav>
-    </div>
-
-    <main class="flex-grow">
+    <main class="flex-grow pb-20 lg:pb-0">
 
       <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-brand-blue">
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -129,7 +89,7 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="flex flex-col lg:flex-row justify-between items-center">
 
-            <div class="md:space-y-8 space-y-4 text-center lg:text-left w-full md:w-[65%]">
+            <div class="md:space-y-8 space-y-4 text-left w-full md:w-[65%]">
               <span
                 class="inline-block px-4 py-1.5 rounded-full bg-brand-yellow/90 text-slate-900 text-xs font-bold tracking-wider uppercase mb-2 shadow-lg shadow-brand-yellow/20">
                 Admissions Open 2026-27
@@ -150,27 +110,28 @@
                 Trusted Since 1979
               </h2>
 
-              <p class="md:text-lg text-[16px] text-white/80 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+              <p class="md:text-lg text-[16px] text-white/80 max-w-lg mx-0 leading-relaxed">
                 The Best IIT-JEE & NEET Coaching Near You. <br />
                 Structured Learning. Proven Results.
               </p>
 
-              <ul class="flex flex-wrap gap-3 text-white/90 text-[12px] lg:text-base max-w-md mx-auto lg:mx-0">
-                <li class="flex items-center gap-2 flex-1 min-w-[45%]">
-                  <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow shrink-0"></i>
-                  <span class="text-white">47+ Years Legacy</span>
+              <ul
+                class="flex flex-col lg:flex-row lg:flex-wrap gap-3 text-white/90 text-[12px] lg:text-base max-w-md mx-auto lg:mx-0">
+                <li class="flex items-center gap-2 w-full lg:flex-1 lg:min-w-[45%]">
+                  <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow shrink-0 animate-pulse"></i>
+                  <span class="text-white text-shadow-lg text-shadow-brand-yellow/50">47+ Years Legacy</span>
                 </li>
-                <li class="flex items-center gap-2 flex-1 min-w-[45%]">
-                  <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow shrink-0"></i>
-                  <span class="text-white">IITian Faculty</span>
+                <li class="flex items-center gap-2 w-full lg:flex-1 lg:min-w-[45%]">
+                  <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow shrink-0 animate-pulse"></i>
+                  <span class="text-white text-shadow-lg text-shadow-brand-yellow/50">IITian Faculty</span>
                 </li>
-                <li class="flex items-center gap-2 flex-1 min-w-[45%]">
-                  <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow fill shrink-0"></i>
-                  <span class="text-white">Scholarship up to 100%</span>
+                <li class="flex items-center gap-2 w-full lg:flex-1 lg:min-w-[45%]">
+                  <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow fill shrink-0 animate-pulse"></i>
+                  <span class="text-white text-shadow-lg text-shadow-brand-yellow/50">Scholarship up to 100%</span>
                 </li>
-                <li class="flex items-center gap-2 flex-1 min-w-[45%]">
-                  <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow shrink-0"></i>
-                  <span class="text-white">Small Batch Size</span>
+                <li class="flex items-center gap-2 w-full lg:flex-1 lg:min-w-[45%]">
+                  <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow shrink-0 animate-pulse"></i>
+                  <span class="text-white text-shadow-lg text-shadow-brand-yellow/50">Small Batch Size</span>
                 </li>
               </ul>
 
@@ -205,7 +166,7 @@
                     <input type="email" placeholder="Email Address" required
                       class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:bg-white transition-all text-sm" />
                   </div>
-                  <div class="grid grid-cols-2 gap-4">
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div>
                       <div class="flex">
                         <span
@@ -222,7 +183,7 @@
                       <option value="Dropper">Dropper</option>
                     </select>
                   </div>
-                  <div class="grid grid-cols-2 gap-4">
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <select id="stream-select"
                       class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:bg-white transition-all text-sm text-slate-600 opacity-50 cursor-not-allowed"
                       disabled>
@@ -257,24 +218,43 @@
         <div class="max-w-6xl mx-auto bg-brand-yellow rounded-3xl shadow-xl py-8 px-4 lg:px-12">
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-black/10">
             <div class="text-center">
-              <h3 class="text-2xl lg:text-4xl font-extrabold text-slate-900 mb-1">100%</h3>
+              <h3 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-1">100%</h3>
               <p class="text-sm lg:text-base font-medium text-slate-800/80">Up to Scholarship</p>
             </div>
             <div class="text-center border-none lg:border-solid lg:border-l-0">
-              <h3 class="text-2xl lg:text-4xl font-extrabold text-slate-900 mb-1">47+</h3>
+              <h3 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-1">47+</h3>
               <p class="text-sm lg:text-base font-medium text-slate-800/80">Years of Excellence</p>
             </div>
             <div class="text-center">
-              <h3 class="text-2xl lg:text-4xl font-extrabold text-slate-900 mb-1">Top 10</h3>
+              <h3 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-1">Top 10</h3>
               <p class="text-sm lg:text-base font-medium text-slate-800/80">Consistently in AIR</p>
             </div>
             <div class="text-center border-none lg:border-solid lg:border-l-0">
-              <h3 class="text-2xl lg:text-4xl font-extrabold text-slate-900 mb-1">250+</h3>
+              <h3 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-1">250+</h3>
               <p class="text-sm lg:text-base font-medium text-slate-800/80">Centres across India</p>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Video Section -->
+      <section class="py-10 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Experience Narayana Coaching</h2>
+          </div>
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl ring-8 ring-white mx-auto">
+            <div class="aspect-video bg-slate-900">
+              <iframe class="w-full md:h-full h-[300px]"
+                src="https://www.youtube.com/embed/DFgrFMb_j60?si=E2RjqyJ8V46V7aS5" title="Narayana Coaching Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <!-- Hall of Fame Section -->
       <section class="py-10 bg-slate-50">
@@ -289,7 +269,8 @@
 
           <div class="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-900/5 bg-white">
             <img src="assets/img/top-performers-desktop.webp" alt="Top Performers"
-              class="w-full h-auto object-cover min-h-[300px]" />
+              class="w-full h-auto object-cover min-h-[300px] hidden md:block" />
+            <img src="assets/img/top-performers-mob.webp" alt="Top Performers" class="w-full h-auto block md:hidden" />
           </div>
         </div>
       </section>
@@ -449,20 +430,21 @@
                 <span class="text-xs font-semibold bg-brand-blue/5 text-brand-blue px-2 py-1 rounded-md">2 Year
                   Programme</span>
               </div>
-              <p class="text-sm text-slate-600 mb-6 flex-grow">Comprehensive 2-year classroom programme covering Board
+              <p class="md:text-sm text-[16px] text-slate-600 mb-6 flex-grow">Comprehensive 2-year classroom programme
+                covering Board
                 exams and JEE Advanced. Includes test series and material.</p>
               <ul class="space-y-2 mb-8">
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>Deep Conceptual Learning</span>
+                  <span class="md:text-sm text-[16px]">Deep Conceptual Learning</span>
                 </li>
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>Daily Practice Papers</span>
+                  <span class="md:text-sm text-[16px]">Daily Practice Papers</span>
                 </li>
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>All India Test Series</span>
+                  <span class="md:text-sm text-[16px]">All India Test Series</span>
                 </li>
               </ul>
               <button
@@ -488,20 +470,21 @@
                 <span class="text-xs font-semibold bg-brand-blue/5 text-brand-blue px-2 py-1 rounded-md">Class 11, 12 &
                   Repeaters</span>
               </div>
-              <p class="text-sm text-slate-600 mb-6 flex-grow">Focused preparation for NEET-UG. Rigorous testing,
+              <p class="md:text-sm text-[16px] text-slate-600 mb-6 flex-grow">Focused preparation for NEET-UG. Rigorous
+                testing,
                 NCERT-based teaching, and error analysis.</p>
               <ul class="space-y-2 mb-8">
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>NCERT Line-by-Line</span>
+                  <span class="md:text-sm text-[16px]">NCERT Line-by-Line</span>
                 </li>
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>Expert Medical Faculty</span>
+                  <span class="md:text-sm text-[16px]">Expert Medical Faculty</span>
                 </li>
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>Regular Doubt Sessions</span>
+                  <span class="md:text-sm text-[16px]">Regular Doubt Sessions</span>
                 </li>
               </ul>
               <button
@@ -524,20 +507,21 @@
                 <span class="text-xs font-semibold bg-brand-blue/5 text-brand-blue px-2 py-1 rounded-md">Class 8, 9 &
                   10</span>
               </div>
-              <p class="text-sm text-slate-600 mb-6 flex-grow">Build a strong base for future competitive exams like
+              <p class="md:text-sm text-[16px] text-slate-600 mb-6 flex-grow">Build a strong base for future competitive
+                exams like
                 JEE, NEET, Olympiads, and NTSE.</p>
               <ul class="space-y-2 mb-8">
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>Olympiad Prep</span>
+                  <span class="md:text-sm text-[16px]">Olympiad Prep</span>
                 </li>
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>Board Exam Excellence</span>
+                  <span class="md:text-sm text-[16px]">Board Exam Excellence</span>
                 </li>
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>Strong Fundamentals</span>
+                  <span class="md:text-sm text-[16px]">Strong Fundamentals</span>
                 </li>
               </ul>
               <button
@@ -563,20 +547,21 @@
                 <span class="text-xs font-semibold bg-brand-blue/5 text-brand-blue px-2 py-1 rounded-md">12th Pass
                   Students</span>
               </div>
-              <p class="text-sm text-slate-600 mb-6 flex-grow">1 Year Intensive programme for rigorous revision and rank
+              <p class="md:text-sm text-[16px] text-slate-600 mb-6 flex-grow">1 Year Intensive programme for rigorous
+                revision and rank
                 improvement focus.</p>
               <ul class="space-y-2 mb-8">
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>Rigorous Revision</span>
+                  <span class="md:text-sm text-[16px]">Rigorous Revision</span>
                 </li>
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>Rank Improvement Focus</span>
+                  <span class="md:text-sm text-[16px]">Rank Improvement Focus</span>
                 </li>
                 <li class="flex items-start gap-2 text-sm text-slate-700">
                   <i data-lucide="check" class="w-4 h-4 text-brand-yellow mt-0.5 shrink-0"></i>
-                  <span>Personal Mentorship</span>
+                  <span class="md:text-sm text-[16px]">Personal Mentorship</span>
                 </li>
               </ul>
               <button
@@ -738,11 +723,12 @@
 
       <!-- Video Section -->
       <section class="py-10 bg-slate-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl ring-8 ring-white">
             <div class="aspect-video bg-slate-900">
-              <iframe class="w-full h-full" src="https://www.youtube.com/embed/LpPOSJeFQ8E?si=i018COrG45cGPkwd"
-                title="Narayana Coaching Video" frameborder="0"
+              <iframe class="w-full md:h-full h-[300px]"
+                src="https://www.youtube.com/embed/LpPOSJeFQ8E?si=i018COrG45cGPkwd" title="Narayana Coaching Video"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen loading="lazy"></iframe>
             </div>
@@ -1165,6 +1151,22 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- Mobile Sticky Footer -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-slate-200 shadow-2xl">
+    <div class="flex gap-2 p-3">
+      <a href="tel:1800-102-3344"
+        class="flex-1 flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-blue/90 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-all">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+        <span>Call</span>
+      </a>
+      <button data-modal-target="demo-modal" data-modal-toggle="demo-modal"
+        class="flex-1 flex items-center justify-center gap-2 bg-brand-yellow hover:bg-brand-yellowHover text-slate-900 font-bold py-3 px-4 rounded-xl shadow-lg shadow-brand-yellow/20 transition-all">
+        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+        <span>Apply Now</span>
+      </button>
+    </div>
   </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
